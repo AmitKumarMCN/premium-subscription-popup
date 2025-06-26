@@ -1,0 +1,202 @@
+<style type="text/css">
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+   body {
+            background: url("https://imgur.com/R58vNhV.png") no-repeat;
+            background-position: top center;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+
+.premium-popup::before{
+  content:''; 
+  display:block;
+  position: absolute;
+  top:calc(-60vh - 4px);
+  left:0;
+  right:0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+  width:100%;
+  height:60vh;
+  z-index: 0;
+}
+.premium-popup{
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #0A192E url(bg-01.jpg) no-repeat;
+  background-blend-mode: soft-light;
+  z-index: 9999;
+  transform: translateY(100%);
+  border-top: 5px solid #f09819;
+  animation: slideUp 0.5s ease-out forwards;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Slide out */
+.premium-popup.hide {
+  animation: slideDown 0.4s ease forwards;
+}
+
+/* Container centered with max-width */
+.premium-popup .premium-popup-container{
+  width: 100%;
+  max-width:680px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Popup Card */
+.premium-popup .premium-popup-card {
+  position: relative;
+  padding: 2rem 1rem;
+}
+
+
+/* Animations */
+@keyframes slideUp {
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+/* Close Button */
+.premium-popup .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.premium-popup .close-btn:hover {
+  color: #fff;
+}
+
+/* Text Styling */
+.premium-heading {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(100deg, #f09819 0%, #edde5d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.premium-subtitle{
+  font-size: 0.8rem;
+  margin-bottom:0.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.premium-popup .premium-benefits {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  color: #f1f5f1;
+}
+
+.premium-popup .premium-benefits {
+  list-style: none;
+  padding-left: 0;
+}
+
+.premium-popup .premium-benefits li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.premium-popup .premium-benefits li::before {
+  content: '✔️'; 
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: green; 
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.btn-subscribe {
+  display: inline-flex;
+  gap: 5px;
+  padding:0.5rem 0.8rem;
+  background:linear-gradient(3deg, #f09819 0%, #edde5d 100%);
+  color: #010101;
+  font-size: 14px;
+  text-shadow: 0px 3px 5px #00000094;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  max-width: 210px;
+  margin: auto;
+  transition: all 0.3s ease-in-out;
+}
+.btn-subscribe:hover {
+  border: 1px solid #f09819;
+  box-shadow: 0 0 10px 1.5px #edde5d;
+}
+
+
+</style>
+
+
+<!-- premium Popup Overlay -->
+<div id="premium-popup" class="premium-popup">
+  <button class="close-btn" onclick="closePopup()">&times;</button>
+  <div class="premium-popup-container">
+    <div class="premium-popup-card">
+      <div class="premium-subtitle">Upgrade to C# Corner Premium Membership</div>
+      <p class="premium-heading">Unlock Exclusive Features, Tools & Rewards!</p>
+
+      <ol class="premium-benefits">
+        <li>📚 Unlimited ebook downloads — no daily limit</li>
+        <li>🎓 Access exclusive certifications & earn bonus tokens</li>
+        <li>📝 Convert blogs & articles to PDF without watermark</li>
+        <li>🧠 Use SharpGPT AI Assistant with unlimited queries</li>
+        <li>🎁 Redeem tokens earned by posting articles and videos for cash and gifts</li>
+        <li>💬 Unlimited direct messaging with experts & MVPs</li>
+        <li>🏅 Premium ribbon & verified checkmark on your profile</li>
+        <li>🎨 Customize your avatar with premium animated frames</li>
+      </ol>
+
+<button class="btn-subscribe"> 
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><linearGradient id="a" x1="36.372" x2="475.628" y1="256" y2="256" gradientUnits="userSpaceOnUse"><stop stop-opacity="1" stop-color="#010101" offset="1"></stop><stop stop-opacity="1" stop-color="#ffffff" offset="1"></stop></linearGradient><path fill="url(#a)" fill-rule="evenodd" d="M121.38 199.73H76.03v-63.38c0-37.53 15.34-71.6 40.03-96.32C140.77 15.34 174.87 0 212.37 0c37.53 0 71.6 15.34 96.32 40.03 24.69 24.72 40.03 58.79 40.03 96.32v7.99c0 5.22-4.25 9.5-9.47 9.5h-26.39c-5.22 0-9.5-4.28-9.5-9.5v-7.99c0-25-10.23-47.74-26.73-64.26-16.5-16.5-39.26-26.73-64.26-26.73s-47.74 10.23-64.23 26.73c-16.53 16.5-26.76 39.26-26.76 64.26zm163.25 225.02c0 19.84 5.56 38.38 15.22 54.14H72.94c-20.1 0-36.57-16.47-36.57-36.6V252.83c0-20.13 16.47-36.57 36.57-36.57h278.87c20.13 0 36.57 16.44 36.57 36.57v68.14c-57.29 0-103.75 46.46-103.75 103.78zM237.21 389l-9.5-43.91c5.7-4.54 9.33-11.51 9.33-19.33 0-13.61-11.03-24.66-24.66-24.66-13.61 0-24.66 11.05-24.66 24.66 0 7.82 3.66 14.8 9.33 19.33L187.57 389c-.28 1.25 0 2.47.82 3.46.82 1.02 1.93 1.56 3.23 1.56h41.53c1.28 0 2.41-.54 3.2-1.56.83-.99 1.11-2.21.86-3.46zm238.42 35.75c0 48.05-39.17 87.25-87.25 87.25-48.05 0-87.25-39.2-87.25-87.25s39.2-87.25 87.25-87.25c48.07 0 87.25 39.2 87.25 87.25zm-40.88-29.71a8.25 8.25 0 0 0-11.68 0l-41.92 41.9-27.47-27.44c-3.2-3.23-8.45-3.23-11.68 0-3.2 3.2-3.2 8.45 0 11.68l33.31 33.28a8.25 8.25 0 0 0 11.68 0l47.76-47.74c3.23-3.23 3.23-8.48 0-11.68zm-33.42-247.83 28.35-28.35c3.2-3.23 3.2-8.45 0-11.68-3.23-3.23-8.48-3.23-11.68 0l-28.35 28.35a8.25 8.25 0 0 0 0 11.68c3.21 3.23 8.45 3.23 11.68 0zm8.22 34.47c1.19 4.39 5.7 7 10.09 5.84l38.72-10.37c4.39-1.19 7.03-5.7 5.84-10.12-1.16-4.39-5.7-7-10.09-5.81l-38.72 10.35c-4.39 1.18-7 5.68-5.84 10.11zm48.82 44.36-38.72-10.38c-4.39-1.19-8.9 1.42-10.09 5.84-1.16 4.39 1.45 8.9 5.84 10.09l38.72 10.38c4.39 1.16 8.93-1.45 10.09-5.84 1.19-4.39-1.45-8.93-5.84-10.09z" clip-rule="evenodd" opacity="1" data-original="url(#a)"></path></g></svg>   Subscribe to Premium
+</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function closePopup() {
+    const popup = document.getElementById('premium-popup');
+    popup.classList.add('hide');
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 400); // Matches the transition duration
+  }
+</script>
